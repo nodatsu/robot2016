@@ -8,7 +8,7 @@ class Robot {
   PVector pos;
   float vel;
   float dir;
-  float rotSpeed;
+  float rot;
   
   // 初期化の処理(コンストラクタ)
   Robot() {
@@ -24,21 +24,21 @@ class Robot {
     pos = new PVector(0, 0, 0);
     vel = 10.0;
     dir = 0;
-    rotSpeed = 0.02;
+    rot = 0.02;
     
-    run();
+    setAction();
   }  
   
   // 更新処理(メソッド)
   void update() { 
     // 移動
-    dir += rotSpeed;
-    pos.x += vel * sin(dir);
-    pos.z += vel * cos(dir);
+    move();
+
+    // 描画
+    fill(255, 128, 64);
+    pushMatrix();
     translate(pos.x, pos.y, pos.z);
     rotateY(dir);
-    
-    // 描画
     translate(0, -300, 0);
     
     box(100, 200, 50);
@@ -52,10 +52,11 @@ class Robot {
     rArm.update();
     lLeg.update();
     rLeg.update();
+    popMatrix();
   }
   
-  // 走る
-  void run() {
+  // 走るポーズ
+  void setAction() {
     float speed = 0.03 * vel;
     float amp = 0.1 * vel;
     
@@ -79,5 +80,12 @@ class Robot {
     rLeg.child.swSpeed = speed;
     rLeg.child.swAmp = amp;
     rLeg.child.swOrg = -amp;    
+  }
+
+  // 移動メソッド
+  void move() {
+    dir += rot;
+    pos.x += vel * sin(dir);
+    pos.z += vel * cos(dir);
   }
 }
