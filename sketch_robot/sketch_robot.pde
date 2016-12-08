@@ -2,8 +2,12 @@
 float zoom = 1.0;
 float phi = 0.0;
 
+Robot r;
+
 void setup() {
   size(800, 600, P3D);
+  
+  r = new Robot();
 }
 
 void draw() {
@@ -18,4 +22,7 @@ void draw() {
 
   fill(64, 255, 96);
   box(5000, 0, 5000);
+  
+  fill(255, 128, 64);
+  r.update();
 }

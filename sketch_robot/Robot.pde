@@ -25,6 +25,8 @@ class Robot {
     vel = 10.0;
     dir = 0;
     rotSpeed = 0.02;
+    
+    run();
   }  
   
   // 更新処理(メソッド)
