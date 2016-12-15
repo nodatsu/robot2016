@@ -10,6 +10,9 @@ class Robot {
   float dir;
   float rot;
   
+  color col;
+  float size;
+  
   // 初期化の処理(コンストラクタ)
   Robot() {
     lArm = new Bone( 70,-100, 0, 40, 100, 40);
@@ -22,9 +25,12 @@ class Robot {
     rLeg.child = new Bone( 0, 0, 0, 40, 100, 40);
 
     pos = new PVector(random(-2000, 2000), 0, random(-2000, 2000));
-    vel = 10.0;
-    dir = 0;
-    rot = 0.02;
+    vel = random(5.0, 10.0);
+    dir = random(-PI, PI);
+    rot = random(-0.03, 0.03);
+    
+    col = color(random(0, 256), random(0, 256), random(0, 256));
+    size = random(0.7, 1.2);
     
     setAction();
   }  
@@ -35,10 +41,11 @@ class Robot {
     move();
 
     // 描画
-    fill(255, 128, 64);
+    fill(col);
     pushMatrix();
     translate(pos.x, pos.y, pos.z);
     rotateY(dir);
+    scale(size);
     translate(0, -300, 0);
     
     box(100, 200, 50);
