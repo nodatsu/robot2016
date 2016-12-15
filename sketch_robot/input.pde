@@ -13,5 +13,5 @@ void mouseDragged() {
 }
 
 void keyPressed() {
-
+  rs.add(new Robot());
 }

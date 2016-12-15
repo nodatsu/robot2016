@@ -6,16 +6,6 @@ ArrayList<Robot> rs = new ArrayList<Robot>();
 
 void setup() {
   size(800, 600, P3D);
-  
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
-  rs.add(  new Robot()  );
 }
 
 void draw() {
