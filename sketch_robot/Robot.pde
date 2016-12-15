@@ -21,7 +21,7 @@ class Robot {
     rLeg = new Bone(-30, 100, 0, 40, 100, 40);
     rLeg.child = new Bone( 0, 0, 0, 40, 100, 40);
 
-    pos = new PVector(0, 0, 0);
+    pos = new PVector(random(-2000, 2000), 0, random(-2000, 2000));
     vel = 10.0;
     dir = 0;
     rot = 0.02;

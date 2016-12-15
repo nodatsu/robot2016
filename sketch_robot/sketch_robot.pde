@@ -2,12 +2,20 @@
 float zoom = 1.0;
 float phi = 0.0;
 
-Robot r;
+ArrayList<Robot> rs = new ArrayList<Robot>();
 
 void setup() {
   size(800, 600, P3D);
   
-  r = new Robot();
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
+  rs.add(  new Robot()  );
 }
 
 void draw() {
@@ -23,5 +31,7 @@ void draw() {
   fill(64, 255, 96);
   box(5000, 0, 5000);
   
-  r.update();
+  for (Robot r: rs) {
+    r.update();
+  }
 }
