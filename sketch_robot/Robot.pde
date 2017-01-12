@@ -94,5 +94,22 @@ class Robot {
     dir += random(-0.1, 0.1);
     pos.x += vel * sin(dir);
     pos.z += vel * cos(dir);
+    
+    if (pos.x > 2500) {
+      pos.x = 2500;
+      dir += PI;
+    }
+    if (pos.x < -2500) {
+      pos.x = -2500;
+      dir += PI;
+    }
+    if (pos.z > 2500) {
+      pos.z = 2500;
+      dir += PI;
+    }
+    if (pos.z < -2500) {
+      pos.z = -2500;
+      dir += PI;
+    }
   }
 }
