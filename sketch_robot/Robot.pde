@@ -91,7 +91,7 @@ class Robot {
 
   // 移動メソッド
   void move() {
-    dir += rot;
+    dir += random(-0.1, 0.1);
     pos.x += vel * sin(dir);
     pos.z += vel * cos(dir);
   }
